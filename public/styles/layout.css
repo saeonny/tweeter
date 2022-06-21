@@ -18,19 +18,31 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  /* background-color: #f4f1ec; */
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
-  
+  background-color: #E6C05C;
+  background-image: url("https://www.transparenttextures.com/patterns/zig-zag.png");
+   
 }
 
-header {
-  padding-top: 120px;
-  display: flex;
-  flex-direction: column;
+main {
+
+  display : flex;
+  width: 90%;
   align-items: center;
-  height: 400px;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #E6C05C;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
+
 }
+
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
