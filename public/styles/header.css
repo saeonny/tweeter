@@ -1,11 +1,15 @@
 header {
   padding-top: 120px;
   display: flex;
-  flex : 1;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 520px;
+  height: 400px;
+  background-color: #726A85;
+  
 }
 
+img {
+  max-height: 65% ;
+}
 

@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -42,33 +43,30 @@
   </nav>
 
   <header>
-    <div>
+    
       <img src="/images/profile-hex.png">
-    </div>
-    <div>
+    
+    
       <h2 style="color: white;"><span>SaeOn</span> Ju</h2>
-    </div>
+    
   </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <div>
-      <h1>HEY THERE</h1>
-    </div>
-    <div>
-      <h1>SLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Arcu vitae elementum curabitur vitae. Tincidunt ornare massa eget egestas. Faucibus turpis in eu
-        mi bibendum neque. Risus commodo viverra maecenas accumsan. Amet volutpat consequat mauris nunc congue nisi
-        vitae. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Tempor commodo ullamcorper a lacus.
-        Turpis egestas sed tempus urna et. Feugiat in fermentum posuere urna. Urna id volutpat lacus laoreet non
-        curabitur. Tincidunt lobortis feugiat vivamus at augue eget arcu. Lectus urna duis convallis convallis tellus id
-        interdum velit laoreet. Cursus in hac habitasse platea. Libero nunc consequat interdum varius sit amet mattis
-        vulputate. Arcu dui vivamus arcu felis bibendum ut tristique et egestas. A cras semper auctor neque vitae
-        tempus. Viverra adipiscing at in tellus integer feugiat scelerisque. Eu facilisis sed odio morbi quis commodo.
-        Dictumst quisque sagittis purus sit amet volutpat consequat mauris.
 
-      </h1>
-    </div>
+    <section class="new-tweet">
+
+      <form action="/tweets/" method="POST">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text" rows="2"></textarea>
+
+        <div class="bottoms">
+          <button class="button1" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
 
 
   </main>

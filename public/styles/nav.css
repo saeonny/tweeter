@@ -19,7 +19,8 @@ nav {
 
 .rightText{
   font-family: 'Source Sans Pro', sans-serif; 
-  font-size: 0.7em;
+  font-weight: 600;
+  font-size: 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
