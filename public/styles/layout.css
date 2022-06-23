@@ -28,11 +28,14 @@ body {
 }
 
 main {
+  padding-top: 1.5em;
+  
 
   display : flex;
   width: 90%;
   flex-direction: column;
   background-color: #E6C05C;
+  /* column-gap: 1em; */
 
   /* align-items: center; */
   /* align-content: stretch;
