@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -24,6 +25,7 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/tweets-on.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -44,17 +46,17 @@
   </nav>
 
   <header>
-    
-      <img src="/images/profile-hex.png">
-      <h2 style="color: white;"><span>SaeOn</span> Ju</h2>
-    
+
+    <img src="/images/profile-hex.png">
+    <h2 style="color: white;"><span>SaeOn</span> Ju</h2>
+
   </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
 
-    <section class="new-tweet" >
-    
+    <section class="new-tweet">
+
       <form action="/tweets/" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" rows="2"></textarea>
@@ -65,8 +67,32 @@
         </div>
       </form>
     </section>
-    <p>hello</p>
+
+    <section class="prev-tweets">
+      <div id="tweets-top">
+        <div id="tweets-topleft">
+          <img id="tweets-img" src = "/images/mokoko.jpeg">
+          <p id="tweets-username"> SaeOn Ju</p>
+        </div>
+        <p id = "tweets-userID">@mokokoWarrior</p>
+      </div>
+        <p id = "tweets-text">lfg legeno map</p>
+      <hr>
+
+      <div id = "tweets-bottom">
+        <p id ="tweets-postedDates"> 2 mins ago</p>
+        <div id = "tweets-bottom-icons">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+
+
+        </div>
+      </div>
+    </section>
+
     
+
 
 
 

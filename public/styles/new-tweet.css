@@ -8,6 +8,8 @@ new-tweet{
   color: #72798F;
   width: 100%;
   background-color: #72798F;
+  padding-bottom: 3em;
+ 
   
 
 }
@@ -26,10 +28,14 @@ textarea{
   border-right: none;
   /* border-color: #545149; */
   outline: none;
-  border-bottom: 5px solid ;
+  border-bottom: 5px #545149 solid ;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
-  color : #545149
+  color : #545149;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+
+
   
 }
 
