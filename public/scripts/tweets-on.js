@@ -2,68 +2,57 @@ $(document).ready(function () {
 
 
   const $prevTweets = $('.prev-tweets')
-  const $flag = $('#flag')
-  const $re = $('#retweet')
-  const $heart = $('#heart')
+  const $flag = $(".fa-flag")
+  const $re = $('.fa-retweet')
+  const $heart = $('.fa-heart')
 
   const img = $('#tweets-img')
+
+
+
+
+  $prevTweets.on({
+    mouseenter: function () {
+      $(this).css("box-shadow", '5px 5px #4056A1')
+    },
+    mouseleave : function () {
+      $(this).css("box-shadow", 'none')
+    }
+  })
+
+
  
 
-
-
-  $prevTweets.mouseover(() => {
-    $prevTweets.css({
-      'box-shadow': '5px 5px #4056A1'
-    })
-  }
-  )
-
-  $prevTweets.mouseleave(()=> {
-    $prevTweets.css({
-      'box-shadow': 'none'
-    })
-    
+  $flag.on({
+    mouseenter: function () {
+      
+      $(this).css("color", '#4056A1')
+    },
+    mouseleave : function () {
+      $(this).css("color", '#545149')
+    }
   })
 
-  $flag.mouseover(() => {
-    $flag.css({
-      'color' : '#4056A1'
-    })
-    
+  $re.on({
+    mouseenter: function () {
+      
+      $(this).css("color", '#4056A1')
+    },
+    mouseleave : function () {
+      $(this).css("color", '#545149')
+    }
   })
 
-  $flag.mouseleave(() => {
-    $flag.css({
-      'color' : '#545149'
-    })
+  $heart.on({
+    mouseenter: function () {
+      
+      $(this).css("color", '#4056A1')
+    },
+    mouseleave : function () {
+      $(this).css("color", '#545149')
+    }
   })
 
-  $re.mouseover(() => {
-    $re.css({
-      'color' : '#4056A1'
-    })
-    
-  })
-
-  $re.mouseleave(() => {
-    $re.css({
-      'color' : '#545149'
-    })
-  })
-
-  $heart.mouseover(() => {
-    $heart.css({
-      'color' : '#4056A1'
-    })
-    
-  })
-
-  $heart.mouseleave(() => {
-    $heart.css({
-      'color' : '#545149'
-    })
-  })
-  
 
 
 })

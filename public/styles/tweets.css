@@ -58,7 +58,7 @@ hr {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 70%;
+  font-size: 80%;
   padding-left: 1em;
   padding-right: 1em;
   
@@ -67,5 +67,6 @@ hr {
 
 #tweets-bottom-icons{
   display: flex;
-  column-gap: 1.2em;
+  column-gap: 0.7em;
+  font-size : 1.3em
 }

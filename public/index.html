@@ -23,6 +23,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   <script type="text/javascript" src="/scripts/tweets-on.js"></script>
@@ -57,7 +58,7 @@
 
     <section class="new-tweet">
 
-      <form action="/tweets/" method="POST">
+      <form id = "submission" action="/tweets/" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" rows="2"></textarea>
 
@@ -74,9 +75,9 @@
           <img id="tweets-img" src = "/images/mokoko.jpeg">
           <p id="tweets-username"> SaeOn Ju</p>
         </div>
-        <p id = "tweets-userID">@mokokoWarrior</p>
+        <p id = "tweets-userID">@KimchiWarrior</p>
       </div>
-        <p id = "tweets-text">lfg legeno map</p>
+        <p id = "tweets-text">hello world ^^</p>
       <hr>
 
       <div id = "tweets-bottom">
@@ -85,16 +86,15 @@
           <i class="fa-solid fa-flag" id = "flag"></i>
           <i class="fa-solid fa-retweet" id ="retweet"></i>
           <i class="fa-solid fa-heart" id ="heart"></i>
-
-
         </div>
       </div>
-    </section>
 
+    </section>
     
 
+   
 
-
+    
 
   </main>
 </body>
