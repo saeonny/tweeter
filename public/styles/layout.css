@@ -35,13 +35,7 @@ main {
   width: 90%;
   flex-direction: column;
   background-color: #E6C05C;
-  /* column-gap: 1em;  */
 
-  /* align-items: center; */
-  /* align-content: stretch;
-  justify-content: center; */
-
-  /* align-self: center; */
   justify-content: center;
 
   
@@ -51,7 +45,6 @@ main {
   row-gap: 2em;
   
   
-
 }
 
 

@@ -1,3 +1,13 @@
+.prev-tweets-container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+
+
 .prev-tweets{
   margin-top: 1em;
   display: flex;
@@ -6,7 +16,13 @@
   padding-left: 0.5em;
   padding-right: 0.5em;
   
+
   
+}
+
+.prev-tweets:hover  {
+  box-shadow : 5px 5px #4056A1
+
 }
 #tweets-top{
   padding-top: 1em;
@@ -49,8 +65,11 @@
 }
 hr {
   width: 99% ;
-  border : 2px solid #545149 ;
-  margin-bottom: 0;
+  border-bottom :  5px  solid #545149 ;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  
 }
 
 #tweets-bottom{
@@ -61,7 +80,19 @@ hr {
   font-size: 80%;
   padding-left: 1em;
   padding-right: 1em;
-  
+
+}
+
+.fa-flag:hover{
+  color: #4056A1;
+
+}
+.fa-retweet:hover{
+  color: #4056A1;
+
+}
+.fa-heart:hover{
+  color: #4056A1;
 
 }
 

@@ -7,7 +7,15 @@
 
 
 $(document).ready(function () {
-  
+  const $textArea = $('#tweet-text');
+  fetch(`http://localhost:8080/tweets`)
+          .then((response) => { return response.json(); })
+          .then((data) => {
+            renderTweets(data)
+            $textArea.val('').change() ;
+          })
+
+
 
 
 
@@ -15,20 +23,30 @@ $(document).ready(function () {
   $("#submission").submit(function (event) {
     //prevent the default
     event.preventDefault();
-    const serializedData = $(this).serialize();
+    if ($textArea.val() === "" || $textArea.val() === null) {
+      alert("You need a word to post")
+    }
+    if (  $textArea.val().length > 140) {
+      alert (`Your word counts should be less than or equal to 140 \n current word counts : ${$textArea.val().length}`)
+    }
 
-    $.ajax({
-      url: `http://localhost:8080/tweets`,
-      method: 'POST',
-      data: serializedData
-    }).then((tweets) => {
-      fetch(`http://localhost:8080/tweets`)
-        .then((response) => { return response.json(); })
-        .then((data) => {
-          renderTweets(data)
-        })
+    else {
+      const serializedData = $(this).serialize();
+      $.ajax({
+        url: `http://localhost:8080/tweets`,
+        method: 'POST',
+        data: serializedData
+      }).then((tweets) => {
+        fetch(`http://localhost:8080/tweets`)
+          .then((response) => { return response.json(); })
+          .then((data) => {
+            renderTweets(data)
+            $textArea.val('').change() ;
+          })
 
-    })
+      })
+    }
+
 
 
   })
@@ -57,12 +75,11 @@ $(document).ready(function () {
   const renderTweets = function (tweets) {
     let results = ""
     tweets.forEach(element => {
-      results += createTweetElement(element);
+      results = createTweetElement(element) + results;
     });
-    $('.prev-tweets').empty()
-    $('.prev-tweets').append(results);
-    
-    
+    $('.prev-tweets-container').empty()
+    $('.prev-tweets-container').html(results);
+
   }
 
 })
