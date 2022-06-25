@@ -10,9 +10,16 @@ new-tweet{
   background-color: #72798F;
   padding-bottom: 3em;
  
-  
+}
+
+.alert {
+  display: none;
+  border: #4056A1 solid;
+  background-color: #4056A1;
+  color: white;
 
 }
+
 .button1{
   background-color: #4056A1;
   font-family:'Bungee', cursive ;

@@ -8,12 +8,20 @@
 
 $(document).ready(function () {
   const $textArea = $('#tweet-text');
+  const $newTweet = $('.new-tweet');
+  const $alerts = $('.alert');
+  const $alertDne = $('#tweet-test-dne')
+  const $alertLong = $('#tweet-text-toolong')
+
+
+
+
   fetch(`http://localhost:8080/tweets`)
-          .then((response) => { return response.json(); })
-          .then((data) => {
-            renderTweets(data)
-            $textArea.val('').change() ;
-          })
+    .then((response) => { return response.json(); })
+    .then((data) => {
+      renderTweets(data)
+      $textArea.val('').change();
+    })
 
 
 
@@ -21,16 +29,27 @@ $(document).ready(function () {
 
   //add an event listener to submit
   $("#submission").submit(function (event) {
+    $alerts.slideUp();
     //prevent the default
     event.preventDefault();
-    if ($textArea.val() === "" || $textArea.val() === null) {
-      alert("You need a word to post")
-    }
-    if (  $textArea.val().length > 140) {
-      alert (`Your word counts should be less than or equal to 140 \n current word counts : ${$textArea.val().length}`)
+
+    
+    if(emptyPostCheck($textArea.val()) && $textArea.val().length > 140 ) {
+      $alertDne.slideDown();
+      $alertLong.slideDown();
     }
 
-    else {
+    if (emptyPostCheck($textArea.val()) || $textArea.val() === null) {
+      return $alertDne.slideDown();
+    }
+    if ($textArea.val().length > 140) {
+      return $alertLong.slideDown();
+    }
+
+    
+
+    if (!emptyPostCheck($textArea.val()) && $textArea.val().length <= 140 && $textArea.val() !== null){
+
       const serializedData = $(this).serialize();
       $.ajax({
         url: `http://localhost:8080/tweets`,
@@ -41,25 +60,31 @@ $(document).ready(function () {
           .then((response) => { return response.json(); })
           .then((data) => {
             renderTweets(data)
-            $textArea.val('').change() ;
+            $textArea.val('').change();
+            $('.counter').text(140)
           })
-
+  
       })
     }
+
 
 
 
   })
 
 
-  const createTweetElement = function (tweet) {
-    let tweetSection = ' <section class="prev-tweets"> <div id="tweets-top"> <div id="tweets-topleft">'
-    tweetSection += `<img id="tweets-img" src = "${tweet.user.avatars}">`
-    tweetSection += `<p id="tweets-username"> ${tweet.user.name}</p> </div>`
-    tweetSection += `<p id ="tweets-userID">${tweet.user.handle}</p> </div>`
-    tweetSection += `<p id = "tweets-text">${tweet.content.text}</p> <hr>`
-    tweetSection += `<div id = "tweets-bottom"> <p id ="tweets-postedDates"> ${timeago.format(tweet.created_at)}</p> `
-    tweetSection += `<div id = "tweets-bottom-icons">
+
+  })
+
+
+const createTweetElement = function (tweet) {
+  let tweetSection = ' <section class="prev-tweets"> <div id="tweets-top"> <div id="tweets-topleft">'
+  tweetSection += `<img id="tweets-img" src = "${tweet.user.avatars}">`
+  tweetSection += `<p id="tweets-username"> ${tweet.user.name}</p> </div>`
+  tweetSection += `<p id ="tweets-userID">${tweet.user.handle}</p> </div>`
+  tweetSection += `<p id = "tweets-text">${tweet.content.text}</p> <hr>`
+  tweetSection += `<div id = "tweets-bottom"> <p id ="tweets-postedDates"> ${timeago.format(tweet.created_at)}</p> `
+  tweetSection += `<div id = "tweets-bottom-icons">
   <i class="fa-solid fa-flag" id = "flag"></i>
   <i class="fa-solid fa-retweet" id ="retweet"></i>
   <i class="fa-solid fa-heart" id ="heart"></i>
@@ -68,18 +93,23 @@ $(document).ready(function () {
 
 </section>`
 
-    return tweetSection
+  return tweetSection
 
-  }
+}
 
-  const renderTweets = function (tweets) {
-    let results = ""
-    tweets.forEach(element => {
-      results = createTweetElement(element) + results;
-    });
-    $('.prev-tweets-container').empty()
-    $('.prev-tweets-container').html(results);
+const renderTweets = function (tweets) {
+  let results = ""
+  tweets.forEach(element => {
+    results = createTweetElement(element) + results;
+  });
+  $('.prev-tweets-container').empty()
+  $('.prev-tweets-container').html(results);
 
-  }
+}
 
-})
+
+const emptyPostCheck = function (str) {
+  return str.trim().length === 0;
+
+}
+
