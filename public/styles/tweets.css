@@ -8,71 +8,72 @@
 
 
 
-.prev-tweets{
+.prev-tweets {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
   border: 5px #545149 solid;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  
 
-  
-}
 
-.prev-tweets:hover  {
-  box-shadow : 5px 5px #4056A1
 
 }
-#tweets-top{
+
+.prev-tweets:hover {
+  box-shadow: 5px 5px #4056A1
+}
+
+#tweets-top {
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
   display: flex;
   flex-direction: row;
-  justify-content:space-between ;
- 
+  justify-content: space-between;
+
   font-weight: 300;
-  height : 5em
-  
+  height: 5em
 }
-#tweets-topleft{
+
+#tweets-topleft {
   display: flex;
   flex-direction: row;
   column-gap: 0.5em;
 }
 
 
-#tweets-img{
+#tweets-img {
   size: 70%;
 }
 
 
 
-#tweets-userID{
+#tweets-userID {
   color: #4057a195;
 }
 
-#tweets-text{
+#tweets-text {
   display: flex;
   flex-direction: column;
   padding-left: 1em;
   padding-right: 1em;
   margin-top: 1em;
-  
-  
+
+
 
 }
+
 hr {
-  width: 99% ;
-  border-bottom :  5px  solid #545149 ;
+  width: 99%;
+  border-bottom: 5px solid #545149;
   border-top: none;
   border-left: none;
   border-right: none;
-  
+
 }
 
-#tweets-bottom{
+#tweets-bottom {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -83,21 +84,23 @@ hr {
 
 }
 
-.fa-flag:hover{
-  color: #4056A1;
-
-}
-.fa-retweet:hover{
-  color: #4056A1;
-
-}
-.fa-heart:hover{
+.fa-flag:hover {
   color: #4056A1;
 
 }
 
-#tweets-bottom-icons{
+.fa-retweet:hover {
+  color: #4056A1;
+
+}
+
+.fa-heart:hover {
+  color: #4056A1;
+
+}
+
+#tweets-bottom-icons {
   display: flex;
   column-gap: 0.7em;
-  font-size : 1.3em
+  font-size: 1.3em
 }

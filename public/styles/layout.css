@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -25,13 +28,13 @@ body {
   background-color: #E6C05C;
   margin-bottom: 2em;
 
- 
-   
+
+
 }
 
 main {
   padding-top: 1.5em;
-  display : flex;
+  display: flex;
   width: 90%;
   flex-direction: column;
   background-color: #E6C05C;
@@ -39,10 +42,15 @@ main {
   margin-left: auto;
   margin-right: auto;
   row-gap: 2em;
-  
-  
+
+
 }
 
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+
+ */
 @media only screen and (min-width:1024px) {
 
   body {
@@ -64,22 +72,15 @@ main {
     margin-left: 40px;
     width: 700px;
 
-    
+
   }
 
   main {
     margin-top: 200px;
     margin-right: 40px;
-    
+
   }
 
 
 
-} 
-
-
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+}
