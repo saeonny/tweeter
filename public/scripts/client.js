@@ -8,14 +8,13 @@
 
 $(document).ready(function() {
   const $textArea = $('#tweet-text');
-  const $newTweet = $('.new-tweet');
   const $alerts = $('.alert');
   const $alertDne = $('#tweet-test-dne');
   const $alertLong = $('#tweet-text-toolong');
 
 
 
-
+  // Initializing the first page (or when refreshed) 
   fetch(`http://localhost:8080/tweets`)
     .then((response) => {
       return response.json();
@@ -29,27 +28,27 @@ $(document).ready(function() {
 
 
 
-  //add an event listener to submit
   $("#submission").submit(function(event) {
     $alerts.slideUp();
-    //prevent the default
     event.preventDefault();
 
-
-    if (emptyPostCheck($textArea.val()) && $textArea.val().length > 140) {
+    // alerts are hided as default
+    // when textarea is filled with spaces and character counts over 140 show two warnings
+    if (emptyPostCheck($textArea.val()) && $textArea.val().length > 140 ) {
       $alertDne.slideDown();
       $alertLong.slideDown();
     }
-
+    // when textarea has nothing or only contains space
     if (emptyPostCheck($textArea.val()) || $textArea.val() === null) {
       return $alertDne.slideDown();
     }
+    // when textarea has more than 140 characters 
     if ($textArea.val().length > 140) {
       return $alertLong.slideDown();
     }
 
 
-
+    // proceed to post when textarea 1.is not null 2.not contains only spaces 3.has less than 140 characters
     if (!emptyPostCheck($textArea.val()) && $textArea.val().length <= 140 && $textArea.val() !== null) {
 
       const serializedData = $(this).serialize();
@@ -76,6 +75,7 @@ $(document).ready(function() {
 });
 
 
+// creating html elements using single tweet
 const createTweetElement = function(tweet) {
   let tweetSection = ' <section class="prev-tweets"> <div id="tweets-top"> <div id="tweets-topleft">';
   tweetSection += `<img id="tweets-img" src = "${tweet.user.avatars}">`;
@@ -89,6 +89,7 @@ const createTweetElement = function(tweet) {
 
 };
 
+// adding tweets to container 
 const renderTweets = function(tweets) {
   let results = "";
   tweets.forEach(element => {
@@ -100,6 +101,7 @@ const renderTweets = function(tweets) {
 };
 
 
+// checking str only contains space
 const emptyPostCheck = function(str) {
   return str.trim().length === 0;
 
